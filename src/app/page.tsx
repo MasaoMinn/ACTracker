@@ -1,103 +1,55 @@
-import Image from "next/image";
-
-export default function Home() {
+"use client";
+import Header from "@/components/layout/Header";
+import { Button, Col, Row, Stack } from "react-bootstrap";
+import Container from "react-bootstrap/Container";
+import { useTheme ,lightTheme ,darkTheme } from "@/components/boxed/ThemeProvider";
+import Rimage from "react-bootstrap/Image";
+import OI from "@/components/layout/OI";
+export default () => {
+  const { theme } = useTheme();
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+    <Container className="h-100 w-100 d-flex flex-column justify-content-center text-center align-items-center" style={theme==='light'? {...lightTheme,}:{...darkTheme}} fluid>
+      <Row className="w-100 mb-3"><Col><Header /></Col></Row>
+      <Row className="w-80 mb-3 g-0" style={{borderColor:"lightblue",borderWidth:"1px",borderStyle:"solid",borderRadius:"10px"}}>
+        <Col className="" style={{width:"16vw"}}>
+          <Rimage src="/head.jpg" alt="头像加载失败" width={"100%"}/>
+        </Col>
+        <Col className="" style={{}}>
+          <div className="" style={theme=="light"?{backgroundColor:"#F4FFC8",color:"#00211F"}:{backgroundColor:"#161712",color:"#D5FFFA"}}>
+            <h3>I'm <b>Masao Minn</b></h3>
+            <p></p>
+            <p>by now a college sophomore from SCUT,major in software engineering.</p>
+            <p>I fell in love with C++ programming in high school,that's why I chose this major</p>
+            <p>I'm stydying React.js(Next.js) full-stack framework,This page is my first React product</p>
+            <p>I'm stydying English for TOFEL and Japanese for JLPT N2.I wacth Family Guy and Big Bang to improve my English accumulation</p>
+            <p>I'm planing to take further education in Tojyo,Japan,where I too a trip and it was amazing</p>
+            <p>In my free time,I write minigames or useful tools on WEB.I enjoy the sense of acheivement after completing a small project</p>
+            <p>I like Pokemons.The monster on the left is a abstract kemono-styled blue fox which I regard as a virtual figure of mine</p>
+            <p>my motto :<b>relax but not lying flat</b></p>
+          </div>
+        </Col>
+      </Row>
+      <Row className="w-60" style={{marginBottom:"1vw"}}>
+        <OI />
+      </Row>
+      <Row className="" style={{width:"50%"}}>
+        <Col style={{borderColor:"blue",borderWidth:"1px",borderStyle:"solid",borderRadius:"10px",marginRight:"10vw"}}>
+          <Stack gap={0}>
+            <div className="p-1"><h4><b>小游戏</b></h4></div>
+            <div className="hr" />
+            <div className="p-1"><Button href="/BWite/index.html" variant={theme} className="w-100">最强大脑-黑白迭代</Button></div>
+            <div className="p-1"><Button href="/Color/index.html" variant={theme} className="w-100">我色感超6</Button></div>
+            <div className="p-1"><Button href="/LightMaze" variant={theme} className="w-100">最强大脑-点灯新世界</Button></div>
+          </Stack>
+        </Col>
+        <Col style={{borderColor:"blue",borderWidth:"1px",borderStyle:"solid",borderRadius:"10px"}}>
+          <Stack gap={1}>
+            <div className="p-2"><h4><b>实用工具</b></h4></div>
+            <div className="hr" />
+            <div className="p-2"><Button href="/" variant={theme} className="w-100">敬请期待</Button></div>
+          </Stack>
+        </Col>
+      </Row>
+    </Container>
   );
 }
