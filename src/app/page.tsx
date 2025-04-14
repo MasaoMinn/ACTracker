@@ -40,6 +40,7 @@ export default () => {
             <div className="p-1"><Button href="/BWite/index.html" variant={theme} className="w-100">最强大脑-黑白迭代</Button></div>
             <div className="p-1"><Button href="/Color/index.html" variant={theme} className="w-100">我色感超6</Button></div>
             <div className="p-1"><Button href="/LightMaze" variant={theme} className="w-100">最强大脑-点灯新世界</Button></div>
+            <div className="p-1"><Button href="/" variant={theme} className="w-100">敬请期待</Button></div>
           </Stack>
         </Col>
         <Col style={{borderColor:"blue",borderWidth:"1px",borderStyle:"solid",borderRadius:"10px"}}>
